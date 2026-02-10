@@ -15,8 +15,6 @@ class Solution:
             R-=1
         return True
 
-
-
 if __name__ == "__main__":
     solution = Solution()
     print(solution.isPalindrome(121)) # True

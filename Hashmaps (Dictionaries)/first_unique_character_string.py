@@ -20,7 +20,7 @@ class Solution:
         return -1 '''
 
 #Second Solution: Instead of if/else, I can use the get method of the dictionary to simplify the code. O(n) of time and O(n) of space.
-class Solution:
+'''class Solution:
     def firstUniqueChar(self, x: str) -> int:
         dict_s = {}
         for char in x: 
@@ -29,7 +29,20 @@ class Solution:
             if dict_s[x[i]] == 1:
                 return i
         return -1
-    
+'''
+#Third Solution: I can save the loop and use "Counter" to count the frequency of each character.
+# O(n) of time and O(n) of space.
+
+import collections
+
+class Solution:
+    def firstUniqueChar(self, x: str) ->  int:
+        dict_s = collections.Counter(x)
+        for i, char in enumerate(x):
+            if dict_s[char] == 1:
+                return i
+        return -1
+
 if __name__ == "__main__":
     solution = Solution()
     print(solution.firstUniqueChar("leetcode")) # 0
