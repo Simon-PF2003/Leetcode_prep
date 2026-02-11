@@ -1,4 +1,4 @@
-'''Given an iteger array, return true if any value appears at least twice in the array, and return false if every element is distinct.'''
+'''Given an integer array, return true if any value appears at least twice in the array, and return false if every element is distinct.'''
 #First solution (Brute Force), bucle dentro de bucle. Poco eficiente, O(n^2)
 from typing import List
 

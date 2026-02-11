@@ -11,7 +11,7 @@ from typing import List
                     return [i, j]
 '''
 #Second Solution: Necesito mas eficiencia para no anidar bucles. Pienso en complemento del numero actual, y busco ese complemento en el array. 
-#Para esto uso un diccionario (hash map) para almacenar los números y sus índices. Recorro la lista y si esta en el diccionario devuelvo el resultado, sino lo añado al diccionario. 
+#Para esto uso un diccionario (hash map) para almacenar los números y sus índices. Recorro la lista y si esta en el diccionario devuelvo el resultado, si no lo añado al diccionario. 
 #O(n) de tiempo y O(n) de espacio.
 
 class Solution:
