@@ -30,6 +30,9 @@ def topKCategories(categories, k):
     return result
     
     '''
+
+#Second solution: It is less efficient, but it works because I keep all the categories with the same popularity in the heap, and I order them alphabetically. 
+#When I append the result, it follows the heap's order. The time complexity is O(n log n) because of the sorting, and the space complexity is O(n) because of the heap.
 import collections
 import heapq
 
@@ -42,7 +45,7 @@ def topKCategories(categories, k):
     category_count = collections.Counter(categories) #I use a Counter to count the occurrences of each category in the list.
     heap = [(-count, category) for category, count in category_count.items()] #I create a list of tuples with the count and the category. I use negative count because I want to use a min heap to get the most popular categories. 
     heapq.heapify(heap) #I convert the list into a heap. The heap will be ordered by count, and if there are multiple categories with the same count, they will be ordered alphabetically.
-    for _ in range(k):
+    for _ in range(min(k, len(heap))): #I iterate k times or the length of the heap, whichever is smaller, to get the k most popular categories. This way, if K is bigger than the length, I avoid an index error.
         count, category = heapq.heappop(heap) #I pop the most popular category from the heap. The count is negative, so I need to negate it to get the actual count.
         result.append(category)
     return result
