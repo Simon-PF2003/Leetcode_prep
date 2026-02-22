@@ -16,6 +16,6 @@ def longestSubstring(s):
             char_set.remove(s[left_pointer])
             left_pointer += 1
         char_set.add(s[right_pointer])
-        max_count = max(max_count, len(char_set))
+        max_count = max(max_count, right_pointer - left_pointer + 1)
     
     return max_count

@@ -10,15 +10,17 @@ class ListNode:
 def reverse_linked_list(head):
     if not head:
         return None
-    prev = None
+    if not head.next:
+        [head]
     curr = head
+    prev = None
 
     while curr:
         next_node = curr.next
         curr.next = prev
 
         prev = curr
-        
         curr = next_node
     return prev
+
     
