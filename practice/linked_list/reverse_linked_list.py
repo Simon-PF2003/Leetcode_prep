@@ -11,7 +11,7 @@ def reverse_linked_list(head):
     if not head:
         return None
     if not head.next:
-        [head]
+        return head
     curr = head
     prev = None
 
